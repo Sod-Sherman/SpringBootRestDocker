@@ -6,7 +6,6 @@ echo "--------------------------------------------------------"
 echo "Now cleaning and compiling java to jar project using by maven"
 echo "--------------------------------------------------------"
 
-sudo rm -rf ./mysql
 mvn clean
 mvn package
 
