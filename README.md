@@ -2,7 +2,8 @@ Hi Dear,
 It would be fine if you follow the steps.
 Thanks.
   
-Step 1.
+## Step 1.
+
 if your OS is linux based (like ubuntu) just run start.sh file on any shell.
 The script required 
     1) Maven
@@ -11,7 +12,8 @@ The script required
 Read end of the script result. 
 The script would populate Docker images and run the containers automatically.
 
-Step 2.
+## Step 2.
+
 After successfully deployed the docker containers: 
 
 http://localhost:8088
@@ -21,7 +23,7 @@ Then you can see the students list which retrieves from DB in this page,
 but your need to login user or admin either.
 
 
-Step 3.
+## Step 3.
 
 Click Load button, 
 if you logged in by admin you can see 
