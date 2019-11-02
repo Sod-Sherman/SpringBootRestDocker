@@ -13,7 +13,7 @@ services:
     image: mariadb:latest
     container_name: MyStudentsDB
     volumes:
-      - target/mysql/:/var/lib/mysql/
+      - /home/docker/volumes/myapp/mysql/:/var/lib/mysql/
     environment:
       - MYSQL_ROOT_PASSWORD=rootPassword
       - MYSQL_DATABASE=sod_projectmin1
