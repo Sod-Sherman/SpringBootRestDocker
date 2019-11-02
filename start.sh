@@ -47,7 +47,7 @@ echo "--------------------------------------------------------"
 echo "Now composing 2 containers which are related my spring-boot-app and mysql using docker-compose.yml file."
 echo "--------------------------------------------------------"
 
-docker-compose up
+docker-compose up -d
 
 #read -n 1 -s -r -p "Press any key to start containers"
 #docker container start sodMiniProject01-app
