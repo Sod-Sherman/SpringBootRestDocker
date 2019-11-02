@@ -6,6 +6,7 @@ echo "--------------------------------------------------------"
 echo "Now cleaning and compiling java to jar project using by maven"
 echo "--------------------------------------------------------"
 
+sudo rm -rf ./mysql
 mvn clean
 mvn package
 
@@ -20,11 +21,9 @@ if [ "$(docker ps -aq -f status=exited -f name=sodMiniProject01-app)" ]; then
   echo "Now cleaning old container and docker images named by my project ..."
   echo "--------------------------------------------------------"
 
-  docker container stop sodMiniProject01-app
-  docker container stop MyStudentsDB
-  docker rm sodMiniProject01-app
-  docker rm MyStudentsDB
-  docker image rm sod-miniproject01:latest mariadb
+
+      docker container rm -f sodMiniProject01-app MyStudentsDB
+      docker image rm sod-miniproject01
 
 fi
 
@@ -49,8 +48,11 @@ echo "--------------------------------------------------------"
 echo "Now composing 2 containers which are related my spring-boot-app and mysql using docker-compose.yml file."
 echo "--------------------------------------------------------"
 
-docker-compose up -d
-docker container ls
+docker-compose up
+
+#read -n 1 -s -r -p "Press any key to start containers"
+#docker container start sodMiniProject01-app
+
 
 echo ""
 echo "--------------------------------------------------------"
