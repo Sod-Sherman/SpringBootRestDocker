@@ -1,0 +1,22 @@
+version: '2'
+services:
+  springbootapp:
+    image: sod-miniproject01:latest
+    container_name: sodMiniProject01-app
+    depends_on:
+      - mariadb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://MyStudentsDB:3306/sod_projectmin1?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    ports:
+      - 8088:8088
+  mariadb:
+    image: mariadb:latest
+    container_name: MyStudentsDB
+    volumes:
+      - /home/docker/volumes/myapp/mysql/:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootPassword
+      - MYSQL_DATABASE=sod_projectmin1
+      - MYSQL_USER=sod
+      - MYSQL_PASSWORD=ThePassword
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8
