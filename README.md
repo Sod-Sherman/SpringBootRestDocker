@@ -1,7 +1,6 @@
 Hi Dear,
 It would be fine if you follow the steps.
 Thanks.
-
   
 Step 1.
 if your OS is linux based (like ubuntu) just run start.sh file on any shell.
