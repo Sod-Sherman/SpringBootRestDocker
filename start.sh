@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo ""
 echo "--------------------------------------------------------"
 echo "Welcome to Sod's mini project 01"
