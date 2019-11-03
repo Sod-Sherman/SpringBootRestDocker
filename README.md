@@ -4,11 +4,20 @@ Thanks.
   
 ## Step 1.
 
-if your OS is linux based (like ubuntu) just run start.sh file on any shell.
-The script required 
-    1) Maven
-    2) Docker
-    3) Internet connection 
+if your OS is linux based (like ubuntu) just run 
+
+```bash 
+
+$ ./start.sh
+```
+ 
+file on any shell.
+The script required
+ 
+    1. Maven
+    2. Docker
+    3. Internet connection
+     
 Read end of the script result. 
 The script would populate Docker images and run the containers automatically.
 
@@ -33,13 +42,19 @@ Forbidden to do the batch process.
 Then logout and login by admin to see
 the result. (Spring Security)
 
+
+
 admin account:
     Username: admin 
     Password: admin
-    
+
+...
+   
 user account:
     Username: user 
     Password: user
+
+...
 
 Every refresh the batch loading (updating) the CSV file.
 Thank you!

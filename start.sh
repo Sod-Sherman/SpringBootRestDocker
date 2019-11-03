@@ -2,27 +2,29 @@ echo ""
 echo "--------------------------------------------------------"
 echo "Welcome to Sod's mini project 01"
 echo ""
+
+docker rm -f mystudentsdb
+
 echo "--------------------------------------------------------"
 echo "Now cleaning and compiling java to jar project using by maven"
 echo "--------------------------------------------------------"
 
 mvn clean
-mvn package
+mvn -Dmaven.test.skip=true package
 
 echo ""
 echo "--------------------------------------------------------"
 echo "Thanks for patient.."
 echo "--------------------------------------------------------"
 
-if [ "$(docker ps -aq -f status=exited -f name=sodMiniProject01-app)" ]; then
+if [ "$(docker ps -aq -f status=exited -f name=sodminiproject01-app)" ]; then
   # cleanup
   echo "--------------------------------------------------------"
   echo "Now cleaning old container and docker images named by my project ..."
   echo "--------------------------------------------------------"
 
-
-      docker container rm -f sodMiniProject01-app MyStudentsDB
-      docker image rm sod-miniproject01
+      docker container rm -f sodminiproject01-app
+      docker image rm sodminiproject01
 
 fi
 
@@ -33,7 +35,7 @@ echo "--------------------------------------------------------"
 echo "Now building docker image from java jar project using Dockfile information ..."
 echo "--------------------------------------------------------"
 
-docker build -t sod-miniproject01 .
+docker build -t sodminiproject01 .
 
 echo ""
 echo "--------------------------------------------------------"
